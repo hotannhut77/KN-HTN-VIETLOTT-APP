@@ -1,129 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>HTN VIETLOTT APP</title>
-	<link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
-	<link rel="stylesheet" href="./assets/css/main.css">
-	<script src="./assets/js/main.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTN VIETLOTT APP</title>
+    <link
+      rel="stylesheet"
+      href="./assets/font/themify-icons-font/themify-icons/themify-icons.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="./assets/js/main.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div id="img-htn">
+        <img src="./assets/imgs/htn.jpg" alt="HTN" />
+      </div>
 
-	<div class="main">
-		<div id="img-htn">
-			<img src="./assets/imgs/htn.jpg" alt="HTN">
-		</div>
+      <header class="header">
+        <!-- begin:nav -->
+        <nav class="nav">
+          <i class="nav__menu ti-menu"></i>
 
-		<header class="header">
+          <div class="subnav">
+            <div class="subnav__item">
+              <i class="ti-home"></i>
+              <b>Trang chủ</b>
+            </div>
+            <div class="subnav__item">
+              <i class="ti-desktop"></i>
+              <b>Kết quả</b>
+            </div>
+            <div class="subnav__item">
+              <i class="ti-bar-chart"></i>
+              <b>Thống kê</b>
+            </div>
+            <div class="subnav__item">
+              <i class="ti-wand"></i>
+              <b>Dự đoán</b>
+            </div>
+            <div class="subnav__item">
+              <i class="ti-pencil-alt"></i>
+              <b>Chọn số</b>
+            </div>
+          </div>
+          <img
+            class="nav__logo"
+            src="./assets/imgs/vietlott-title.jpg"
+            alt="vietlott"
+          />
+        </nav>
 
-			<!-- begin:nav -->
-			<nav class="nav">
-				<i class="nav__menu ti-menu"></i>
-				
-				
-				<div class="subnav">
-					<div class="subnav__item">
-						<i class="ti-home"></i>
-						<b>Trang chủ</b>
-					</div>
-					<div class="subnav__item">
-						<i class="ti-desktop"></i>
-						<b>Kết quả</b>
-					</div>
-					<div class="subnav__item">
-						<i class="ti-bar-chart"></i>
-						<b>Thống kê</b>
-					</div>
-					<div class="subnav__item">
-						<i class="ti-wand"></i>
-						<b>Dự đoán</b>
-					</div>
-					<div class="subnav__item">
-						<i class="ti-pencil-alt"></i>
-						<b>Chọn số</b>
-					</div>
-				</div>
-				<img class ="nav__logo" src="./assets/imgs/vietlott-title.jpg" alt="vietlott">
-			
-			</nav>
+        <!-- end:nav -->
+      </header>
 
-			<!-- end:nav -->
-			
-		</header>
+      <div class="slider">
+        <img src="./assets/imgs/vl.png" alt="vietlott banner" />
+      </div>
 
-		<div class="slider">
-			<img src="./assets/imgs/vl.png" alt="vietlott banner">
-		</div>
+      <!-- begin: content -->
+      <div class="content">
+        <div action="" class="form-content">
+          <div class="form-group">
+            <label for="">Loại xổ số</label>
+            <select name="" id="mega-power">
+              <option value="45">Mega 645</option>
+              <option value="55">Power 655</option>
+              <option value="3DC">Max 3D +</option>
+              <option value="3DP">Max 3D Pro</option>
+            </select>
+          </div>
 
-		<!-- begin: content -->
-		<div class="content">
-		
-		<div action="" class="form-content">
+          <div class="form-group">
+            <label for="">Số cố định</label>
+            <input
+              required
+              placeholder="Nhập các số cách nhau bởi khoảng trắng"
+              type="text"
+              name=""
+              id="so-co-dinh"
+            />
+          </div>
 
-			<div class="form-group">
-				<label for="">Loại xổ số</label>
-				<select  name="" id="mega-power">
-					<option value="45">Mega 645 </option>
-					<option value="55">Power 655 </option>
-				</select>
-			</div>
+          <div class="form-group">
+            <label for="">Số loại</label>
+            <input
+              required
+              placeholder="Nhập các số chắc chắn loại bỏ ra khỏi vé"
+              type="text"
+              name=""
+              id="so-loai"
+            />
+          </div>
 
-			<div class="form-group">
-				<label for="">Số cố định</label>
-				<input required placeholder="Nhập các số cách nhau bởi khoảng trắng" type="text" name="" id="so-co-dinh">
-			</div>
+          <div class="form-group">
+            <label for="">Số vé</label>
+            <input
+              required
+              placeholder="Nhập số vé cần mua"
+              type="number"
+              name=""
+              id="so-ve"
+            />
+          </div>
 
-			<div class="form-group">
-				<label for="">Số loại</label>
-				<input required placeholder="Nhập các số chắc chắn loại bỏ ra khỏi vé" type="text" name="" id="so-loai" >
-			</div>
+          <input
+            onclick="submitFunc()"
+            class="btn-form"
+            type="submit"
+            value="xác nhận"
+          />
 
-			<div class="form-group">
-				<label for="">Số vé</label>
-				<input required placeholder="Nhập số vé cần mua" type="number" name="" id="so-ve">
-			</div>
+          <!-- begin: result -->
+          <div class="result">
+            <h3>Bộ số của bạn là :</h3>
 
-			<input onclick="submitFunc()" class="btn-form" type="submit" value="xác nhận">
+            <ol id="result-list"></ol>
+          </div>
 
-			<!-- begin: result -->
-			<div class="result">
-				<h3>Bộ số của bạn là :</h3>
-				
-				
+          <!-- end: result -->
+        </div>
+      </div>
+      <!-- end: content -->
 
-				<ol id="result-list">
-
-				</ol>
-					
-			</div>
-
-			<!-- end: result -->
-
-
-		</div>
-
-		</div>
-		<!-- end: content -->
-
-		<!-- begin: footer -->
-		<footer class="footer">
-			<div class="footer-icon">
-				<ul>
-					<li><a id="facebook" target="_blank" href="https://www.facebook.com/VietlottChonNiemVuiBungMayMan"><i class="ti-facebook"></i></a></li>
-					<li><a  id = "youtube"target="_blank" href="https://www.youtube.com/user/Vietlott/featured"><i class="ti-youtube"></i></a></li>
-					<li><a id="google"target="_blank" href="https://www.vietlott.vn/"><i class="ti-google"></i></a></li>
-				</ul>
-			</div>
-			<b>Quyết tâm trúng Jackpot</b>
-			<br>
-			<b>Hồ Tấn Nhựt - Trần Thị Kim Ngân <br> Hồ Thị Thu Hiền</b>
-			<p>© 2022 Copyright: anh em siêu nhân phòng 10</p>
-		</footer>
-		<!-- end: footer -->
-
-	</div>
-	
-</body>
+      <!-- begin: footer -->
+      <footer class="footer">
+        <div class="footer-icon">
+          <ul>
+            <li>
+              <a
+                id="facebook"
+                target="_blank"
+                href="https://www.facebook.com/VietlottChonNiemVuiBungMayMan"
+                ><i class="ti-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                id="youtube"
+                target="_blank"
+                href="https://www.youtube.com/user/Vietlott/featured"
+                ><i class="ti-youtube"></i
+              ></a>
+            </li>
+            <li>
+              <a id="google" target="_blank" href="https://www.vietlott.vn/"
+                ><i class="ti-google"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <b>Quyết tâm trúng Jackpot</b>
+        <br />
+        <b
+          >Hồ Tấn Nhựt - Trần Thị Kim Ngân <br />
+          Hồ Thị Thu Hiền</b
+        >
+        <p>© 2022 Copyright: anh em siêu nhân phòng 10</p>
+      </footer>
+      <!-- end: footer -->
+    </div>
+  </body>
 </html>

@@ -21,61 +21,94 @@ function submitFunc(){
 	let code=[];
 	var soSoRandom=6-valueSoCoDinh.length;
 
-	for (let i= 0;i<valueSoVe;i++){
-		let codeItem=[];
-		for (let j =0;j<soSoRandom;j++){
-			let count =0;
+	if(valueMG == "3DC" || valueMG == "3DP") {
+		
+		for (let i= 0;i<valueSoVe;i++) {
+			let num1 = Math.floor(Math.random()*10);
+			let num2 = Math.floor(Math.random()*10);
+			let num3 = Math.floor(Math.random()*10);
+			let num4 = Math.floor(Math.random()*10);
+			let num5 = Math.floor(Math.random()*10);
+			let num6 = Math.floor(Math.random()*10);
+			
+			let codeItem=[num1+""+num2+num3,num4+""+num5+num6];
+			
+			code.push(codeItem);
 
-			while(count <1){
-				let num = Math.floor(Math.random()*valueMG+1);
-				if ((valueSoLoai.indexOf(num)== -1)&&(valueSoCoDinh.indexOf(num)==-1)&&(codeItem.indexOf(num)==-1)){
-					codeItem.push(num);
-					count ++;
+		}
+
+		// tạo các thẻ <li></li>
+		let htmlCode = '';
+		for(let i=0;i<code.length;i++){
+			let codeNum='<li>';
+			for(let j=0;j<code[i].length;j++){
+				codeNum = codeNum + " " +code[i][j];
+			}
+			codeNum += ' </li>'
+			htmlCode = htmlCode +' '+ codeNum;
+		}
+		
+		let elementList=document.getElementById('result-list');
+		elementList.innerHTML= htmlCode;
+	}else {
+		for (let i= 0;i<valueSoVe;i++){
+			let codeItem=[];
+			for (let j =0;j<soSoRandom;j++){
+				let count =0;
+	
+				while(count <1){
+					let num = Math.floor(Math.random()*valueMG+1);
+					if ((valueSoLoai.indexOf(num)== -1)&&(valueSoCoDinh.indexOf(num)==-1)&&(codeItem.indexOf(num)==-1)){
+						codeItem.push(num);
+						count ++;
+					}
+					else {continue;}
 				}
-				else {continue;}
+			}
+	
+			for(var m =0;m< valueSoCoDinh.length;m++){
+	
+				codeItem.push(valueSoCoDinh[m]);
+			}
+			code.push(codeItem);
+		}
+		
+		// đổi hết sang kiểu string 
+		for(let i=0;i<code.length;i++){
+			for(let j=0;j<code[i].length;j++){
+				if (code[i][j]<10){
+					code[i][j]='0'+ code[i][j];
+				}else{
+					code[i][j]=''+ code[i][j];
+	
+				}
 			}
 		}
-
-		for(var m =0;m< valueSoCoDinh.length;m++){
-
-			codeItem.push(valueSoCoDinh[m]);
-		}
-		code.push(codeItem);
-	}
 	
-	// đổi hết sang kiểu string 
-	for(let i=0;i<code.length;i++){
-		for(let j=0;j<code[i].length;j++){
-			if (code[i][j]<10){
-				code[i][j]='0'+ code[i][j];
-			}else{
-				code[i][j]=''+ code[i][j];
-
+		
+		// sắp xếp chuổi 
+		for(let i=0;i<code.length;i++){
+			for(let j=0;j<code[i].length;j++){
+				code[i].sort();
 			}
 		}
+	
+		// tạo các thẻ <li></li>
+		let htmlCode = '';
+		for(let i=0;i<code.length;i++){
+			let codeNum='<li>';
+			for(let j=0;j<code[i].length;j++){
+				codeNum = codeNum + ' '+code[i][j];
+			}
+			codeNum += ' </li>'
+			htmlCode = htmlCode +' '+ codeNum;
+		}
+		
+		let elementList=document.getElementById('result-list');
+		elementList.innerHTML= htmlCode;
 	}
 
 	
-	// sắp xếp chuổi 
-	for(let i=0;i<code.length;i++){
-		for(let j=0;j<code[i].length;j++){
-			code[i].sort();
-		}
-	}
-
-	// tạo các thẻ <li></li>
-	let htmlCode = '';
-	for(let i=0;i<code.length;i++){
-		let codeNum='<li>';
-		for(let j=0;j<code[i].length;j++){
-			codeNum = codeNum + ' '+code[i][j];
-		}
-		codeNum += ' </li>'
-		htmlCode = htmlCode +' '+ codeNum;
-	}
-	
-	let elementList=document.getElementById('result-list');
-	elementList.innerHTML= htmlCode;
 }
 
 
